@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="text-center text-info">Add a Destination</h2>
+<form method="POST" class="p-4 bg-white rounded shadow">
+  <div class="mb-3">
+    <label for="name" class="form-label">Destination Name</label>
+    <input type="text" class="form-control" name="name" required>
+  </div>
+  <div class="mb-3">
+    <label for="region" class="form-label">Region</label>
+    <input type="text" class="form-control" name="region" required>
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Short Description</label>
+    <textarea class="form-control" name="description" rows="3" required></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="image" class="form-label">Image Filename (in static/images/)</label>
+    <input type="text" class="form-control" name="image" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Add Destination</button>
+</form>
+{% endblock %}

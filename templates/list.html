@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="text-center mb-4">Destinations</h2>
+
+<form method="GET" class="mb-4">
+  <div class="input-group">
+    <input type="text" name="region" class="form-control" placeholder="Filter by region...">
+    <button class="btn btn-outline-secondary" type="submit">Filter</button>
+  </div>
+</form>
+
+<div class="row g-4">
+  {% for dest in destinations %}
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="{{ url_for('static', filename='images/' ~ dest.image) }}" class="card-img-top" alt="{{ dest.name }}">
+      <div class="card-body">
+        <h5 class="card-title text-primary">{{ dest.name }}</h5>
+        <p class="card-text">{{ dest.description[:100] }}...</p>
+        <a href="{{ url_for('destination_detail', id=dest.id) }}" class="btn btn-info btn-sm">View Details</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

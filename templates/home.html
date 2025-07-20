@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="text-center py-5">
+  <h1 class="display-4 text-primary">Your Dream Destinations Await 🌄</h1>
+  <p class="lead">Add, explore, and organize your dream travel bucket list.</p>
+  <a href="{{ url_for('list_destinations') }}" class="btn btn-success btn-lg mt-3">View Destinations</a>
+</div>
+{% endblock %}
